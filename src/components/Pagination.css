@@ -1,0 +1,26 @@
+.container-pagination{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.list {
+  border: 1px solid #fff;
+  padding: 5px;
+}
+
+.pagination {
+  display: flex;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+.pagination button {
+  padding: 10px;
+}
+
+.active-pagination-button {
+  background: black;
+  color: #fff;
+  border: 1px solid #fff;
+}
