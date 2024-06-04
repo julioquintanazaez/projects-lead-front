@@ -8,8 +8,8 @@ import axios from 'axios';
 import App from './src/App';
 import { UserProvider } from "./src/context/UserContext";
 
-axios.defaults.baseURL =  "http://localhost:8000"; 
-//axios.defaults.baseURL =  "https://hidro-project-back-end.onrender.com"; 
+//axios.defaults.baseURL =  "http://localhost:8000"; 
+axios.defaults.baseURL =  "https://project-lead-back.onrender.com"; 
 
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
