@@ -28,7 +28,6 @@ const Login = () =>{
 				console.log(window.localStorage.getItem("hidro-application-v1.0"));
 			}
 			else{
-				setErrorMessage(response.data);
 				window.localStorage.removeItem("hidro-application-v1.0");
 			}
 		}).catch((error) => {
@@ -67,51 +66,53 @@ const Login = () =>{
 	return (
 		<>
 		{!token && (
-			<div className="columns m-5 is-two-thirds">
-				<form className="box" onSubmit={formik.handleSubmit}>
-					<h1 className="title has-text-centered">Sing-in</h1>
-					<div className="field">
-						<label className="label">Username</label>
-						<div className="control">
-							<input
-							  type="text"
-							  name="username"
-							  value={formik.values.username}
-							  onChange={formik.handleChange}
-							  onBlur={formik.handleBlur}
-							  className={"input" + 
-											(formik.errors.username && formik.touched.username
-											? "is-invalid"
-											: ""
-										)}
-							  placeholder="Enter a valid username"
-							/>
-							<div>{(formik.errors.username) ? <p style={{color: 'red'}}>{formik.errors.username}</p> : null}</div>
+			<div className="Auth-form-container">
+				<form className="Auth-form" onSubmit={formik.handleSubmit}>
+					<div className="Auth-form-content">						
+						<h1 className="col">Sing-in</h1>
+						<div className="col">
+							<label className="label">Username</label>
+							<div className="form-group mt-3">
+								<input
+								  type="text"
+								  name="username"
+								  value={formik.values.username}
+								  onChange={formik.handleChange}
+								  onBlur={formik.handleBlur}
+								  className={"form-control mt-1" + 
+												(formik.errors.username && formik.touched.username
+												? "is-invalid"
+												: ""
+											)}
+								  placeholder="Enter a valid username"
+								/>
+								<div>{(formik.errors.username) ? <p style={{color: 'red'}}>{formik.errors.username}</p> : null}</div>
+							</div>
 						</div>
-					</div>
-					<div className="field">
-						<label className="label">Password</label>
-						<div className="control">
-							<input
-							  type="password"
-							  name="password"
-							  value={formik.values.password}
-							  onChange={formik.handleChange}
-							  onBlur={formik.handleBlur}
-							  className={"input" + 
-											(formik.errors.password && formik.touched.password
-											? "is-invalid"
-											: ""
-										)}
-							  placeholder="Enter a valid password"
-							/>
-							<div>{(formik.errors.password) ? <p style={{color: 'red'}}>{formik.errors.password}</p> : null}</div>
+						<div className="field">
+							<label className="label">Password</label>
+							<div className="form-group mt-3">
+								<input
+								  type="password"
+								  name="password"
+								  value={formik.values.password}
+								  onChange={formik.handleChange}
+								  onBlur={formik.handleBlur}
+								  className={"form-control mt-1" + 
+												(formik.errors.password && formik.touched.password
+												? "is-invalid"
+												: ""
+											)}
+								  placeholder="Enter a valid password"
+								/>
+								<div>{(formik.errors.password) ? <p style={{color: 'red'}}>{formik.errors.password}</p> : null}</div>
+							</div>
 						</div>
+						<br/>
+						<button className="btn btn-success" type="submit">
+							Entrar
+						</button>
 					</div>
-					<br/>
-					<button className="button is-primary" type="submit">
-						Entrar
-					</button>
 				</form>		
 			</div>
 		)}	

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function useLoadUsers(){
 	
-	const {token, stateUsersChange} = useContext(UserContext);
+	const {token, stateUsersChange, handleLogout} = useContext(UserContext);
 	const [users, setUsers] = useState([]);	
 	
 	useEffect(() => {
@@ -23,9 +23,11 @@ export default function useLoadUsers(){
 					setUsers(response.data);
 				}else {	
 					setUsers([]);
+					handleLogout();
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
+				handleLogout();
 			});		
 		};		
 		

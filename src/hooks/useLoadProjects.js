@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function useLoadProjects(){
 	
-	const {token,
+	const {token, handleLogout,
 		   stateProjectsChange,
 		   stateMaterialsChange,
 		   stateTasksChange,
@@ -27,9 +27,11 @@ export default function useLoadProjects(){
 					setProjects(response.data);
 				}else {	
 					setProjects([]);
+					handleLogout();
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
+				handleLogout();
 			});		
 		};		
 		

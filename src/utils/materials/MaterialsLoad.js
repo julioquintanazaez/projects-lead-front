@@ -8,7 +8,7 @@ import MaterialsTable from "./../../components/MaterialsTable";
 
 const MaterialsLoad = ( props ) => {
 
-	const {	token, stateMaterialsChange } = useContext(UserContext);	
+	const {	token, stateMaterialsChange, handleLogout } = useContext(UserContext);	
 	const [materials, setMaterials] = useState([]);			
 	
 	const [ducts, setDucts] = useState([]);			
@@ -34,6 +34,7 @@ const MaterialsLoad = ( props ) => {
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
+				handleLogout();
 			});	
 		};						
 		

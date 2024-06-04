@@ -33,13 +33,11 @@ export const UserProvider = ( props ) => {
 					window.localStorage.setItem("projects-application-v1.0", token);	
 				}else {	
 					console.log("No existe el token");
-					setToken(null); 
-					setRoles([]);	
-					window.localStorage.removeItem("projects-application-v1.0");
+					handleLogout();
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
-				window.localStorage.removeItem("projects-application-v1.0");
+				handleLogout();
 			});		
 		};		
 		
@@ -50,7 +48,7 @@ export const UserProvider = ( props ) => {
 	const handleLogout =() => {
 		setToken(null);
 		setRoles([]);	
-		window.localStorage.removeItem("hidro-application-v1.0");
+		window.localStorage.removeItem("projects-application-v1.0");
 	};
 	
 	return (

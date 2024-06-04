@@ -42,7 +42,7 @@ const MaterialDelete = ( props ) => {
 	return (	
 		<>			
 			<button type="submit" 
-					className="btn btn-success"
+					className="btn btn-danger"
 					onClick={(e) => handleDeleteSubmit(e)} > 
 					Delete
 			</button>

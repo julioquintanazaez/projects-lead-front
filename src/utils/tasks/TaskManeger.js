@@ -13,7 +13,7 @@ import CreateTaskModal from "./../../utils/tasks/CreateTaskModal";
 export default function TaskManeger( props ) {
 	
 	const { token, 
-			user, 
+			user,
 			stateProjectsChange, 
 			stateLaborsChange, 
 			stateTasksChange, 
@@ -39,6 +39,8 @@ export default function TaskManeger( props ) {
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
+				handleLogout();
+				
 			});		
 		};		
 		

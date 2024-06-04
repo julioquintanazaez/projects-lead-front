@@ -35,11 +35,11 @@ export default function ProjectItemsModal ( props ) {
 	
 	return (
 		<>
-		<button className="detail-button" onClick={handleShow}>
+		<button className="btn btn-success" onClick={handleShow}>
 			Detail 
 		</button>
 		<Modal show={show} onHide={handleClose} size="lg" > 
-			<Modal.Header closeButton>
+			<Modal.Header closeButton className="header-modal">
 				<Modal.Title>
 					Project stuff
 				</Modal.Title>
@@ -58,7 +58,7 @@ export default function ProjectItemsModal ( props ) {
 				</>	
 			</Modal.Body>
 			<Modal.Footer>		
-				<Button className="btn-sm" variant="secondary" onClick={handleClose}>
+				<Button className="btn btn-secondary" variant="secondary" onClick={handleClose}>
 					Close
 				</Button>	  
 			</Modal.Footer>

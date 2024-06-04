@@ -35,6 +35,7 @@ export default function LaborManeger( props ) {
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
+				handleLogout();
 			});		
 		};		
 		
@@ -52,20 +53,24 @@ export default function LaborManeger( props ) {
 						<div className="accordion-item">
 							<h2 className="accordion-header">
 								<button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse" + index} aria-expanded="true" aria-controls={"collapse" + index}>
-									{labor.labor_type}
+									<div className="col" key={labor.labor_id}>										
+										<div className="col col-sm text-end">
+											< LaborDelete labor={labor} />
+											< UpdateLaborModal labor={labor} />
+										</div>
+										<div className="col col-sm text-start">
+											<h4>{labor.labor_type}</h4>
+										</div>
+									</div>	
 								</button>
 							</h2>
 							<div id={"collapse" + index} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
 								<div className="accordion-body">
-									<div className="col" key={labor.labor_id}>
-										<div className="col">
-											< LaborDelete labor={labor} />
-											< UpdateLaborModal labor={labor} />
-										</div>
-										<div className="col">							
+									<div className="col" key={labor.labor_id}>										
+										<div className="col-tasks-maneger">							
 											<TaskManeger labor_id={labor.labor_id}/>
 										</div>
-										<div className="col">
+										<div className="col-equipments-maneger">
 											<EquipmentManeger labor_id={labor.labor_id}/>
 										</div>
 									</div>

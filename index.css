@@ -9,16 +9,6 @@ body{
 h1{
 	font-size: 4rem;
 }
-button{
-	font-size: 1.7rem;
-	font-weight: bold;
-	padding: 10px 20px;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.5s ease;
-}
 .add-button{
 	background-color: hsl(125, 47%, 54%);
 }
@@ -49,27 +39,13 @@ button{
 .search-button:hover{
 	background-color: hsl(125, 47%, 44%);
 }
-input[type="text"]{
-	font-size: 1.6rem;
-	padding: 10px;
-	border: 2px solid hsla(0, 0%, 80%, 0.5);
-	border-radius: 5px;
-	color: hsla(0, 0%, 0%, 0.5);
-}
-input[type="password"]{
-	font-size: 1.6rem;
-	padding: 10px;
-	border: 2px solid hsla(0, 0%, 80%, 0.5);
-	border-radius: 5px;
-	color: hsla(0, 0%, 0%, 0.5);
-}
 ol{
 	padding: 0;	
 }
 li{
-	font-size: 2rem;
+	font-size: 1.4rem;
 	font-weight: bold;
-	padding: 15px;
+	padding: 5px;
 	background-color: hsl(0, 0%, 97%);
 	margin-bottom: 10px;
 	border: 3px solid hsla(0, 0%, 85%, 0.75);
@@ -77,18 +53,26 @@ li{
 	display: flex;
 	align-items: center;
 }
-.text{
-	flex: 1;
-}
-.delete-button, .update-button, .detail-button{
-	padding: 8px, 12px;
-	font-size: 1.4rem;
+.delete-button, .update-button, .detail-button, .search-button, .add-button{
+	padding: 5px, 12px;
+	font-size: 1.2rem;
 	margin-left: 10px;
 }
-select[type="text"]{
-	font-size: 1.6rem;
-	padding: 10px;
-	border: 2px solid hsla(0, 0%, 80%, 0.5);
-	border-radius: 5px;
-	color: hsla(0, 0%, 0%, 0.5);
+.add-button{
+	margin-top: 12px;
+	margin-bottom: 10px;
+}
+.btn{
+	margin-top: 1.5px;
+	margin-bottom: 1.5px;
+	margin-left: 2px;
+}
+.col-tasks-maneger{
+	background-color: hsl(0, 0%, 97%);
+}
+.col-equipments-maneger{
+	background-color: hsl(0, 0%, 97%);
+}
+.header-modal{
+	background-color: hsl(125, 100%, 47%);
 }

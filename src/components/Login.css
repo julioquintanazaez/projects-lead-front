@@ -1,0 +1,26 @@
+input[type="text"]{
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+input[type="password"]{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.Auth-form-container{
+	border-radius: 5px;
+	margin: auto;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.login-button{
+	background-color: hsl(125, 47%, 54%);
+}
+.login-button:hover{
+	background-color: hsl(125, 47%, 44%);
+}
+.login-button{
+	padding: 6px, 12px;
+	font-size: 1.4rem;
+	margin-left: 10px;
+}

@@ -1,6 +1,6 @@
 .container-pagination{
   width: 100%;
-  max-width: 800px;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -12,15 +12,16 @@
 .pagination {
   display: flex;
   border: 1px solid #fff;
-  padding: 10px;
+  padding: 5px;
 }
 
 .pagination button {
-  padding: 10px;
+  padding: 6px;
 }
 
 .active-pagination-button {
-  background: black;
+  border-radius: 5px;
+  background: green;
   color: #fff;
   border: 1px solid #fff;
 }

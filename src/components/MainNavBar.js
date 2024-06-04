@@ -31,9 +31,6 @@ const MainNavBar = ( props ) => {
 										<LinkContainer to="/">
 											<Nav.Link>Home</Nav.Link>
 										</LinkContainer>
-										<LinkContainer to="/tabla">
-											<Nav.Link>Tabla</Nav.Link>
-										</LinkContainer>
 										{roles.includes("admin") && (
 										<LinkContainer to="/users">
 											<Nav.Link>Users</Nav.Link>

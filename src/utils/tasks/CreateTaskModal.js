@@ -87,11 +87,11 @@ export default function CreateTaskModal( props ) {
 	
 	return (
 		<>
-		<button className="add-button" onClick={handleShow}>
+		<button className="btn btn-success" onClick={handleShow}>
 			New task 
 		</button>
 		<Modal show={show} onHide={handleClose} size="lm" > 
-			<Modal.Header closeButton>
+			<Modal.Header closeButton className="header-modal">
 				<Modal.Title>
 					Create a new task
 				</Modal.Title>
@@ -168,7 +168,7 @@ export default function CreateTaskModal( props ) {
 			
 			</Modal.Body>
 			<Modal.Footer>		
-				<Button className="btn-sm" variant="secondary" onClick={handleClose}>
+				<Button className="btn btn-secondary" variant="secondary" onClick={handleClose}>
 					Close
 				</Button>	  
 			</Modal.Footer>

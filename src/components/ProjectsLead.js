@@ -74,6 +74,7 @@ function ProjectsLead( props ){
 						value={query}
 						onChange={(e) => setQuery(e.target.value)}
 						disabled={!props.projects.length ? true : false}
+						className="text"
 					/>	
 					< CreateProjectModal />
 				</div>		

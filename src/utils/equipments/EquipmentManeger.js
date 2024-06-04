@@ -39,6 +39,7 @@ export default function EquipmentManeger( props ) {
 				}
 			}).catch((error) => {
 				console.error({"message":error.message, "detail":error.response.data.detail});
+				handleLogout();
 			});		
 		};		
 		

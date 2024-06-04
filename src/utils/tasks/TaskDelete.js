@@ -42,7 +42,7 @@ const TaskDelete = ( props ) => {
 	return (	
 		<>			
 			<button type="submit" 
-					className="delete-button"
+					className="btn btn-danger"
 					onClick={(e) => handleDeleteSubmit(e)} > 
 					Delete
 			</button>

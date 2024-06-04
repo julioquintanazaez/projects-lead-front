@@ -100,11 +100,11 @@ export default function CreateMaterialModal( props ) {
 	
 	return (
 		<>
-		<button className="add-button" onClick={handleShow}>
+		<button className="btn btn-success" onClick={handleShow}>
 			New material 
 		</button>
 		<Modal show={show} onHide={handleClose} size="lm" > 
-			<Modal.Header closeButton>
+			<Modal.Header closeButton className="header-modal">
 				<Modal.Title>
 					Create a new material
 				</Modal.Title>
@@ -183,7 +183,7 @@ export default function CreateMaterialModal( props ) {
 			
 			</Modal.Body>
 			<Modal.Footer>		
-				<Button className="btn-sm" variant="secondary" onClick={handleClose}>
+				<Button className="btn btn-secondary" variant="secondary" onClick={handleClose}>
 					Close
 				</Button>	  
 			</Modal.Footer>
