@@ -78,6 +78,7 @@ export default function UpdateProjectModal( props ) {
 			console.log("Updating data...");
 			updateTask(props.task.task_id);
 			formik.resetForm();
+			setShow(false);
 		},
 		validationSchema: validationRules
 	});
@@ -166,7 +167,7 @@ export default function UpdateProjectModal( props ) {
 					</div>	
 					<div className="d-grid gap-2 mt-3">
 						<button type="submit" className="btn btn-success">
-								Update data
+								Update task
 						</button>					
 					</div>		
 				</form>

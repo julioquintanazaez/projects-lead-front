@@ -81,6 +81,7 @@ export default function CreateProjectModal( props ) {
 			console.log("Saving data...");
 			createProject();
 			formik.resetForm();
+			setShow(false);
 		},
 		validationSchema: validationRules
 	});
@@ -167,7 +168,7 @@ export default function CreateProjectModal( props ) {
 					
 					<div className="d-grid gap-2 mt-3">
 						<button type="submit" className="btn btn-success">
-								Save data
+								Create project
 						</button>					
 					</div>		
 				</form>

@@ -21,6 +21,7 @@ export default function UpdateMaterialModal( props ) {
 			method: 'put',
 			url: "/update_material/" + id,
 			data: {
+				material_name: formik.values.material_name,
 				material_quantity: formik.values.material_quantity,
 				material_price: formik.values.material_price,						
 			},
@@ -52,14 +53,17 @@ export default function UpdateMaterialModal( props ) {
 		}
 	}
 	
-	const validationRules = Yup.object().shape({		
+	const validationRules = Yup.object().shape({	
+		material_name: Yup.string().trim()
+			.required("Material name is required"),
 		material_quantity: Yup.number().positive()
-			.required("Material need is required"),
+			.required("Material quantity is required"),
 		material_price: Yup.number().positive()
 			.required("Material price is required"),
 	});
 	
 	const registerInitialValues = {
+		material_name : props.material.material_name,
 		material_quantity : props.material.material_quantity,
 		material_price : props.material.material_price
 	};
@@ -70,6 +74,7 @@ export default function UpdateMaterialModal( props ) {
 			console.log("Updating data...");
 			updateMaterial(props.material.material_id);
 			formik.resetForm();
+			setShow(false);
 		},
 		validationSchema: validationRules
 	});
@@ -89,6 +94,21 @@ export default function UpdateMaterialModal( props ) {
 			<Modal.Body>
 			
 				<form className="form-control" onSubmit={formik.handleSubmit}>
+					<div className="form-group mt-3" id="material_name">
+						<label>Change the quantity for the material</label>
+						<input
+						  type="text"
+						  name="material_name"
+						  value={formik.values.material_name}
+						  onChange={formik.handleChange}
+						  onBlur={formik.handleBlur}
+						  className={"form-control mt-1" + 
+										(formik.errors.material_name && formik.touched.material_name
+										? "is-invalid" : "" )}
+						  placeholder="Enter a name here"
+						/>					
+						<div>{(formik.errors.material_name) ? <p style={{color: 'red'}}>{formik.errors.material_name}</p> : null}</div>
+					</div>
 					<div className="form-group mt-3" id="material_quantity">
 						<label>Change the quantity for the material</label>
 						<input
@@ -122,7 +142,7 @@ export default function UpdateMaterialModal( props ) {
 									
 					<div className="d-grid gap-2 mt-3">
 						<button type="submit" className="btn btn-success">
-								Update data
+								Update material
 						</button>					
 					</div>		
 				</form>

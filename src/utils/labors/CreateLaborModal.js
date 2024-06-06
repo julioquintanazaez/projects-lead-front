@@ -69,6 +69,7 @@ export default function CreateLaborModal( props ) {
 			console.log("Saving data...");
 			createLabor();
 			formik.resetForm();
+			setShow(false);
 		},
 		validationSchema: validationRules
 	});
@@ -112,7 +113,7 @@ export default function CreateLaborModal( props ) {
 					</div>					
 					<div className="d-grid gap-2 mt-3">
 						<button type="submit" className="btn btn-success">
-								Save data
+								Create labor
 						</button>					
 					</div>		
 				</form>

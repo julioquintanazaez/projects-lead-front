@@ -66,11 +66,11 @@ const Login = () =>{
 	return (
 		<>
 		{!token && (
-			<div className="Auth-form-container">
-				<form className="Auth-form" onSubmit={formik.handleSubmit}>
-					<div className="Auth-form-content">						
-						<h1 className="col">Sing-in</h1>
-						<div className="col">
+			<>
+				<div className="Auth-form-container">
+					<form className="Auth-form" onSubmit={formik.handleSubmit}>
+						<div className="Auth-form-content">				
+							<h1 className="text-sigin text-center">Sing-in</h1>
 							<label className="label">Username</label>
 							<div className="form-group mt-3">
 								<input
@@ -81,17 +81,13 @@ const Login = () =>{
 								  onBlur={formik.handleBlur}
 								  className={"form-control mt-1" + 
 												(formik.errors.username && formik.touched.username
-												? "is-invalid"
-												: ""
-											)}
+												? "is-invalid" : "" )}
 								  placeholder="Enter a valid username"
 								/>
 								<div>{(formik.errors.username) ? <p style={{color: 'red'}}>{formik.errors.username}</p> : null}</div>
-							</div>
-						</div>
-						<div className="field">
+							</div>							
 							<label className="label">Password</label>
-							<div className="form-group mt-3">
+							<div className="form-group">
 								<input
 								  type="password"
 								  name="password"
@@ -100,21 +96,19 @@ const Login = () =>{
 								  onBlur={formik.handleBlur}
 								  className={"form-control mt-1" + 
 												(formik.errors.password && formik.touched.password
-												? "is-invalid"
-												: ""
-											)}
+												? "is-invalid" : "" )}
 								  placeholder="Enter a valid password"
 								/>
 								<div>{(formik.errors.password) ? <p style={{color: 'red'}}>{formik.errors.password}</p> : null}</div>
-							</div>
+							</div>							
+							<br/>
+							<button className="btn btn-success" type="submit">
+								Entrar
+							</button>
 						</div>
-						<br/>
-						<button className="btn btn-success" type="submit">
-							Entrar
-						</button>
-					</div>
-				</form>		
-			</div>
+					</form>		
+				</div>				
+			</>
 		)}	
 		</>
 	);

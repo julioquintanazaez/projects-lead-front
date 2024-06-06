@@ -176,7 +176,7 @@ export default function CreateMaterialModal( props ) {
 					</div>
 					<div className="d-grid gap-2 mt-3">
 						<button type="submit" className="btn btn-success">
-								Save data
+								Create material
 						</button>					
 					</div>		
 				</form>

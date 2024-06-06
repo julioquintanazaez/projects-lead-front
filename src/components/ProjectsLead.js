@@ -30,6 +30,13 @@ function ProjectsLead( props ){
 		setFilteredProjects(filtered);
 	}, [query]);
 	
+	const getTotal = ( list ) => {
+		let total = 0;
+		for (var i = 0; i < list.length; i++) {
+			total += list[i].project_amount;
+		}		
+		return total;
+	}
 	
 	const renderButones = ( project ) => {
 		return (
@@ -69,7 +76,7 @@ function ProjectsLead( props ){
 				<h1>Projects in process</h1>			
 				<div className="col">
 					<input
-						type="text"
+						type="search"
 						placeholder="Search..."
 						value={query}
 						onChange={(e) => setQuery(e.target.value)}
@@ -81,10 +88,15 @@ function ProjectsLead( props ){
 				<br/>
 				<ol>
 				{filteredProjects.length > 0 ? (
-					renderProjects( currentFilteredItems )
+					renderProjects( currentFilteredItems )					
 				) : (
-					renderProjects( currentItems )
+					renderProjects( currentItems )					
 				)}
+				</ol>
+				<ol>
+					<li className="li-total-project">
+						<h4>Total amount: {getTotal( currentFilteredItems.length > 0 ? currentFilteredItems : props.projects )} </h4> 				
+					</li>
 				</ol>
 				<div className='container-pagination'>
 				{filteredProjects.length > 0 ? (				
