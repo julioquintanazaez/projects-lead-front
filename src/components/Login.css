@@ -57,3 +57,17 @@ label {
 	margin-top: 10px;
 	margin-bottom: 1.5px;
 }
+
+.disabledButton{
+	backgroundColor: "gray";
+	color : "white";
+	cursor: "not-allowed";
+	boxShadow: "0px 0px 10px 0px grey"	;
+}
+
+.enabledButton{
+	backgroundColor: "green";
+	color : "white";
+	cursor: "pointer";
+	boxShadow: "0px 0px 10px 0px green";
+}

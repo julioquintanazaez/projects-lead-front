@@ -10,6 +10,7 @@ import { useFormik } from "formik";
 const Login = () =>{
 	
 	const {token, setToken} = useContext(UserContext);
+	const [sending, setSending] = useState(false);
 	
 	const autenticar_usuario = async () =>{
 		
@@ -26,6 +27,7 @@ const Login = () =>{
 			if (response.status === 200) {						
 				setToken(response.data.access_token);
 				console.log(window.localStorage.getItem("hidro-application-v1.0"));
+				setSending(false);
 			}
 			else{
 				window.localStorage.removeItem("hidro-application-v1.0");
@@ -59,6 +61,7 @@ const Login = () =>{
 			console.log("Sending datas...");
 			autenticar_usuario();
 			formik.resetForm();
+			setSending(true);
 		},
 		validationSchema: validationRules,
 	});
@@ -102,8 +105,10 @@ const Login = () =>{
 								<div>{(formik.errors.password) ? <p style={{color: 'red'}}>{formik.errors.password}</p> : null}</div>
 							</div>							
 							<br/>
-							<button className="btn btn-success" type="submit">
-								Entrar
+							<button className="btn btn-success" 
+									type="submit" 
+									disabled={sending}>
+								{!sending ? "Enter" : "Waitng"}
 							</button>
 						</div>
 					</form>		
